@@ -1,0 +1,125 @@
+/* iOS Safari: use dvh and -webkit-fill-available so full height works with address bar */
+.ar-container {
+  width: 100vw !important;
+  height: 100vh !important;
+  height: 100dvh !important;
+  min-height: -webkit-fill-available !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  overflow: hidden !important;
+  background: #000 !important;
+  z-index: 1 !important;
+}
+
+.ar-controls {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-start {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.btn-start:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.btn-stop {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  color: white;
+}
+
+.btn-stop:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(245, 87, 108, 0.4);
+}
+
+.ar-instructions {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 16px 24px;
+  border-radius: 12px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+}
+
+.ar-instructions p {
+  margin: 0 0 8px 0;
+  font-size: 14px;
+}
+
+.target-link {
+  color: #667eea;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.target-link:hover {
+  text-decoration: underline;
+}
+
+/* Make AFRAME scene fill the container (iOS-safe height) */
+a-scene {
+  width: 100vw !important;
+  height: 100vh !important;
+  height: 100dvh !important;
+  min-height: -webkit-fill-available !important;
+  display: block !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  overflow: hidden !important;
+}
+
+/* Camera feed: full bleed so no black bar on right (JS also applies every frame on iOS) */
+a-scene canvas,
+a-scene video {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-width: 100% !important;
+  min-height: 100% !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  box-sizing: border-box !important;
+}
+
+/* Hide A-Frame UI elements */
+.a-enter-vr,
+.a-orientation-modal {
+  display: none !important;
+}
