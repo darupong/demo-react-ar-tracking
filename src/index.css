@@ -51,34 +51,36 @@
 
 @layer base {
   * {
-    @apply border-border;
+    border-color: hsl(var(--border));
   }
-  
-  html, body {
+
+  html,
+  body {
     margin: 0 !important;
     padding: 0 !important;
     width: 100% !important;
   }
-  
+
   body {
-    @apply bg-background text-foreground;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
     min-width: 320px;
     min-height: 100vh;
   }
-  
+
   #root {
     width: 100%;
     min-height: 100vh;
   }
-  
-  /* Class สำหรับป้องกันการเลื่อนเมื่อเปิด AR */
+
+  /* Prevent scroll when AR is active */
   body.ar-active {
     overflow: hidden !important;
     position: fixed !important;
     width: 100% !important;
     height: 100% !important;
   }
-  
+
   body.ar-active #root {
     position: fixed !important;
     top: 0 !important;
