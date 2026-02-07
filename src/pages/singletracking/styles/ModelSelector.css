@@ -1,33 +1,33 @@
-/* Model Selector Styles */
+/* Model selector: IMAI-style glass + neutral */
 .model-selector {
   position: fixed;
   top: 80px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1000;
-  background: rgba(0, 0, 0, 0.85);
-  padding: 20px 24px;
-  border-radius: 16px;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 20px 24px;
+  border-radius: 0.75rem;
   max-width: 90vw;
 }
 
 .model-info {
   margin-top: 12px;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.7);
   font-size: 13px;
   text-align: center;
 }
 
 .model-info strong {
-  color: #667eea;
+  color: #fff;
 }
 
 .model-selector h4 {
   margin: 0 0 12px 0;
-  color: white;
+  color: #fff;
   font-size: 14px;
   font-weight: 600;
   text-align: center;
@@ -42,26 +42,26 @@
 
 .model-btn {
   padding: 10px 20px;
-  background: rgba(255, 255, 255, 0.1);
-  color: white;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 0.5rem;
   cursor: pointer;
   font-size: 14px;
   font-weight: 600;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
 }
 
-.model-btn:hover {
-  background: rgba(255, 255, 255, 0.2);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+.model-btn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.12);
+  transform: scale(1.02);
 }
 
-.model-btn.active {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  border-color: #667eea;
-  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+.model-btn.active,
+.model-btn:disabled {
+  background: rgba(255, 255, 255, 0.95);
+  color: #0a0a0a;
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 /* Responsive */

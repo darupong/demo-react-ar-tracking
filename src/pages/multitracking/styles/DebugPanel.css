@@ -1,0 +1,217 @@
+/* Debug panel: IMAI-style glass + neutral */
+.debug-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 2000;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all 0.2s ease;
+}
+
+.debug-toggle:hover {
+  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.debug-panel {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 340px;
+  max-height: 70vh;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.75rem;
+  color: rgba(255, 255, 255, 0.95);
+  z-index: 2000;
+  overflow: hidden;
+}
+
+.debug-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.debug-header h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.debug-header button {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 24px;
+  cursor: pointer;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.375rem;
+  transition: background 0.2s;
+}
+
+.debug-header button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.debug-content {
+  padding: 20px;
+  max-height: calc(70vh - 60px);
+  overflow-y: auto;
+}
+
+.debug-content section {
+  margin-bottom: 20px;
+}
+
+.debug-content section:last-child {
+  margin-bottom: 0;
+}
+
+.debug-content h4 {
+  margin: 0 0 12px 0;
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.debug-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  font-size: 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.debug-item:last-child {
+  border-bottom: none;
+}
+
+.debug-item span:first-child {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.debug-item span:last-child {
+  font-weight: 600;
+  color: #fff;
+}
+
+.debug-item .success {
+  color: #4ade80;
+}
+
+.debug-item .error {
+  color: #f87171;
+}
+
+.debug-item.user-agent {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.debug-item.user-agent small {
+  color: rgba(255, 255, 255, 0.55);
+  word-break: break-all;
+  line-height: 1.4;
+  margin-top: 4px;
+}
+
+.debug-warning {
+  margin-top: 12px;
+  padding: 12px;
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  border-radius: 0.5rem;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #fca5a5;
+}
+
+.debug-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.debug-actions button {
+  flex: 1;
+  padding: 10px 16px;
+  border-radius: 0.5rem;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.btn-refresh {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+
+.btn-refresh:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.btn-copy {
+  background: rgba(255, 255, 255, 0.95);
+  color: #0a0a0a;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.btn-copy:hover {
+  background: #fff;
+}
+
+.debug-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.debug-content::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 3px;
+}
+
+.debug-content::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+}
+
+.debug-content::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+@media (max-width: 768px) {
+  .debug-panel {
+    width: calc(100vw - 40px);
+    max-width: 340px;
+    bottom: 80px;
+    right: 20px;
+  }
+}
