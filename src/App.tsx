@@ -1,11 +1,12 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import MainLayout from './layouts/MainLayout';
+import FaceMeshPage from './pages/facemesh';
 import LandingPage from './pages/landing';
 import MultiTrackingPage from './pages/multitracking';
 import SingleTrackingPage from './pages/singletracking';
 import SingleTrackingVideoPage from './pages/singletracking-video';
 
-/** App router: / = landing; /singletracking, /singletracking-video, /multitracking = AR pages. */
+/** App router: / = landing; /singletracking, /singletracking-video, /multitracking, /facemesh = AR pages. */
 function App() {
   return (
     <BrowserRouter>
@@ -14,6 +15,7 @@ function App() {
         <Route path="/singletracking" element={<SingleTrackingPage />} />
         <Route path="/singletracking-video" element={<SingleTrackingVideoPage />} />
         <Route path="/multitracking" element={<MultiTrackingPage />} />
+        <Route path="/facemesh" element={<FaceMeshPage />} />
       </Routes>
     </BrowserRouter>
   );

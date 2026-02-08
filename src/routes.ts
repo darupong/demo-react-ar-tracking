@@ -4,4 +4,5 @@ export const ROUTES = {
   singleTracking: '/singletracking',
   singleTrackingVideo: '/singletracking-video',
   multiTracking: '/multitracking',
+  facemesh: '/facemesh',
 } as const;
