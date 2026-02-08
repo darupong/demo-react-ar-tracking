@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import '../styles/ARScene.css';
+import MultiTrackingTutorial from './MultiTrackingTutorial';
 
 /** Multi-target AR: one .mind file with 2 targets. targetIndex 0 = Crab, targetIndex 1 = Shrimp. See https://hiukim.github.io/mind-ar-js-doc/examples/multi-targets */
 interface ARSceneMultiProps {
@@ -297,15 +298,11 @@ const ARSceneMulti: React.FC<ARSceneMultiProps> = ({
         </a-entity>
       </a-scene>
 
-      <div className="ar-controls" style={{ zIndex: 1001 }}>
-        {!isARStarted ? (
-          <button onClick={startAR} disabled={!isARReady} className="btn btn-start" style={{ position: 'relative', zIndex: 1002 }}>
-            {isARReady ? 'Start AR' : 'Loading...'}
-          </button>
-        ) : (
+      {isARStarted && (
+        <div className="ar-controls" style={{ zIndex: 1001 }}>
           <button onClick={stopAR} className="btn btn-stop" style={{ position: 'relative', zIndex: 1002 }}>Stop AR</button>
-        )}
-      </div>
+        </div>
+      )}
 
       {(cameraError || loadError) && (
         <div className="ar-instructions ar-error" style={{ zIndex: 1001 }}>
@@ -330,6 +327,10 @@ const ARSceneMulti: React.FC<ARSceneMultiProps> = ({
             File: <strong>{imageTargetSrc.replace(/^.*\//, '')}</strong>
           </p>
         </div>
+      )}
+
+      {!isARStarted && !loadError && (
+        <MultiTrackingTutorial onStartAR={startAR} isARReady={isARReady} />
       )}
     </div>
   );

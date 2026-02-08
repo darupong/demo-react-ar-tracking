@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import '../styles/ARScene.css';
+import TrackingTutorial from '../../../components/TrackingTutorial';
 
 interface ARSceneProps {
   imageTargetSrc?: string;
@@ -248,15 +249,11 @@ const ARScene: React.FC<ARSceneProps> = ({
         </a-entity>
       </a-scene>
 
-      <div className="ar-controls" style={{ zIndex: 1001 }}>
-        {!isARStarted ? (
-          <button onClick={startAR} disabled={!isARReady} className="btn btn-start" style={{ position: 'relative', zIndex: 1002 }}>
-            {isARReady ? 'Start AR' : 'Loading...'}
-          </button>
-        ) : (
+      {isARStarted && (
+        <div className="ar-controls" style={{ zIndex: 1001 }}>
           <button onClick={stopAR} className="btn btn-stop" style={{ position: 'relative', zIndex: 1002 }}>Stop AR</button>
-        )}
-      </div>
+        </div>
+      )}
 
       {cameraError && (
         <div className="ar-instructions ar-error" style={{ zIndex: 1001 }}>
@@ -269,6 +266,15 @@ const ARScene: React.FC<ARSceneProps> = ({
           <p>🎯 Point your camera at your custom target image</p>
           <p style={{ fontSize: '12px', marginTop: '8px', opacity: 0.9 }}>Using: <strong>targets.mind</strong></p>
         </div>
+      )}
+
+      {!isARStarted && (
+        <TrackingTutorial
+          title="วิธีใช้ AR (3D Model)"
+          stepsText="ใช้ภาพนี้เป็น Target: พิมพ์หรือเปิดบนอีกเครื่อง แล้วกด Start AR จากนั้นชี้กล้องไปที่ภาพ โมเดล 3D จะแสดงเมื่อจับ target ได้"
+          onStartAR={startAR}
+          isARReady={isARReady}
+        />
       )}
     </div>
   );

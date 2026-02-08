@@ -1,0 +1,155 @@
+/* Tutorial panel: glass style, image + download + start; centered & responsive */
+.tracking-tutorial {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 32px);
+  max-width: 360px;
+  max-height: calc(100vh - 32px);
+  overflow-y: auto;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.95);
+  padding: 16px;
+  border-radius: 0.75rem;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.tracking-tutorial--center {
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.tracking-tutorial__title {
+  margin: 0 0 12px 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.tracking-tutorial__image-wrap {
+  margin: 0 0 12px 0;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.tracking-tutorial__image {
+  display: block;
+  width: 100%;
+  max-height: 180px;
+  object-fit: contain;
+  vertical-align: top;
+}
+
+.tracking-tutorial__steps {
+  margin: 0 0 14px 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+@media (max-width: 480px) {
+  .tracking-tutorial {
+    width: calc(100% - 24px);
+    padding: 12px;
+    max-height: calc(100dvh - 24px);
+  }
+
+  .tracking-tutorial__title {
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+
+  .tracking-tutorial__image-wrap {
+    margin-bottom: 10px;
+  }
+
+  .tracking-tutorial__image {
+    max-height: 140px;
+  }
+
+  .tracking-tutorial__steps {
+    font-size: 12px;
+    margin-bottom: 12px;
+  }
+
+  .tracking-tutorial__download-btn {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+
+  .tracking-tutorial__start-btn {
+    margin-top: 12px;
+    padding: 12px 20px;
+    font-size: 16px;
+  }
+}
+
+@media (max-height: 560px) {
+  .tracking-tutorial__image {
+    max-height: 120px;
+  }
+
+  .tracking-tutorial__steps {
+    margin-bottom: 10px;
+  }
+
+  .tracking-tutorial__start-btn {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 15px;
+  }
+}
+
+.tracking-tutorial__download-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #0a0a0a;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tracking-tutorial__download-btn:hover {
+  background: #fff;
+  transform: scale(1.02);
+}
+
+.tracking-tutorial__start-btn {
+  display: block;
+  width: 100%;
+  margin-top: 14px;
+  padding: 14px 24px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #0a0a0a;
+  background: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.tracking-tutorial__start-btn:hover:not(:disabled) {
+  background: #f0f0f0;
+  transform: scale(1.03);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.3);
+}
+
+.tracking-tutorial__start-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

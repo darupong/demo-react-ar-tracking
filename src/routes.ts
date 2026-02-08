@@ -2,5 +2,6 @@
 export const ROUTES = {
   home: '/',
   singleTracking: '/singletracking',
+  singleTrackingVideo: '/singletracking-video',
   multiTracking: '/multitracking',
 } as const;
