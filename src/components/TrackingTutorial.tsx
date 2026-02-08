@@ -1,7 +1,7 @@
 import './TrackingTutorial.css';
 
-/** Public path for the AR tracking target image (same image used to compile .mind). */
-export const TRACKING_IMAGE_PATH = '/images-tracking/3cee94ba-38d5-4613-9216-eb72d4b4ba50.jpeg';
+/** CDN URL for the AR tracking target image (singletracking & singletracking-video download). */
+export const TRACKING_IMAGE_PATH = 'https://imgentic.sgp1.cdn.digitaloceanspaces.com/Test/3cee94ba-38d5-4613-9216-eb72d4b4ba50.jpeg';
 const TRACKING_IMAGE_DOWNLOAD_NAME = 'ar-tracking-target.jpeg';
 
 const DEFAULT_TITLE = 'วิธีใช้ AR (Video)';

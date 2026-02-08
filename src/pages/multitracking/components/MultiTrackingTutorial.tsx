@@ -1,8 +1,8 @@
 import '../styles/MultiTrackingTutorial.css';
 
-/** Paths for multi-tracking target images (Crab = target 0, Shrimp = target 1). */
-export const CRAB_TRACKING_IMAGE = '/images-tracking/Crab-tracking.png';
-export const SHRIMP_TRACKING_IMAGE = '/images-tracking/Shrimp-tracking.png';
+/** CDN URLs for multi-tracking target images (Crab = target 0, Shrimp = target 1). */
+export const CRAB_TRACKING_IMAGE = 'https://imgentic.sgp1.cdn.digitaloceanspaces.com/Test/imai-logo-mini2.png';
+export const SHRIMP_TRACKING_IMAGE = 'https://imgentic.sgp1.cdn.digitaloceanspaces.com/Test/imsnap-logo-mini.png';
 
 interface MultiTrackingTutorialProps {
   onStartAR?: () => void;
@@ -37,7 +37,7 @@ function MultiTrackingTutorial({ onStartAR, isARReady = false }: MultiTrackingTu
           <button
             type="button"
             className="multi-tracking-tutorial__download-btn"
-            onClick={() => downloadImage(CRAB_TRACKING_IMAGE, 'Crab-tracking.png')}
+            onClick={() => downloadImage(CRAB_TRACKING_IMAGE, 'imai-logo-mini2.png')}
           >
             📥 ดาวน์โหลด Crab
           </button>
@@ -50,7 +50,7 @@ function MultiTrackingTutorial({ onStartAR, isARReady = false }: MultiTrackingTu
           <button
             type="button"
             className="multi-tracking-tutorial__download-btn"
-            onClick={() => downloadImage(SHRIMP_TRACKING_IMAGE, 'Shrimp-tracking.png')}
+            onClick={() => downloadImage(SHRIMP_TRACKING_IMAGE, 'imsnap-logo-mini.png')}
           >
             📥 ดาวน์โหลด Shrimp
           </button>
